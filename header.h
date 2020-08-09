@@ -1,4 +1,3 @@
 #include<stdio.h>
-int m,n,x,y,z;
-int add(int a[m][n],int b[m][n]);
-int multiply(int a[x][y],int b[y][z]);
+int* add(int row,int col,int *a,int *b);
+int* multiply(int r1,int r2,int c1,int c2,int *a,int *b);

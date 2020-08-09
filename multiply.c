@@ -1,16 +1,16 @@
-int x,y,z;
-
-int multiply(int a[x][y],int b[y][z])
+int* multiply(int r1,int r2,int c1,int c2,int *a,int *b)
 {
-	int c[x][z];
-      for (int i = 0; i < x; ++i) 
+	int m[r1][c2];
+	int* p=&m[0][0];
+      for (int i = 0; i < r1; ++i) 
       {
-          for (int j = 0; j <z; ++j)
+          for (int j = 0; j <c2; ++j)
 	  {
-              for (int k = 0; k < y; ++k) {
-            c[i][j] += a[i][k] * b[k][j];
-         }
-      }
-   }
-      return c[x][z];
+		  m[i][j]=0;
+              for (int k = 0; k < r2; ++k) {
+                  m[i][j] += *((a+i)+k)*(*((b+k)+j));
+     	      }
+          }
+ }
+      return p;
 }

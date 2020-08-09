@@ -1,15 +1,13 @@
-int m,n;
-
-int add(int a[m][n],int b[m][n])
+int* add(int row,int col,int *a,int *b)
 {
-	int c[m][n];
-	for(int i=0;i<m;i++)
+	int* c;
+	for(int i=0;i<row;i++)
 	{
-		for(int j=0;j<n;j++)
+		for(int j=0;j<col;j++)
 		{
-			c[i][j]=a[i][j]+b[i][j];
+			*((c+i)+j)=*((a+i)+j)+ *((b+i)+j);
 		}
 	}
-	return c[m][n];
+	return c;
 }
 
